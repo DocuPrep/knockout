@@ -38,6 +38,7 @@ ko.memoization = (function () {
                 callback.apply(null, callbackParams || []);
                 return true;
             }
+	    catch (e) {}
             finally { delete memos[memoId]; }
         },
 
