@@ -6,6 +6,7 @@ ko.bindingHandlers['submit'] = {
             var handlerReturnValue;
             var value = valueAccessor();
             try { handlerReturnValue = value.call(viewModel, element); }
+	    catch (e) {}
             finally {
                 if (handlerReturnValue !== true) { // Normally we want to prevent default action. Developer can override this be explicitly returning true.
                     if (event.preventDefault)
